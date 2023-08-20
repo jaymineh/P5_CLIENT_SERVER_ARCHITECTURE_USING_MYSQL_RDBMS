@@ -3,7 +3,7 @@
 ---
 
 - Set up two Linux EC2 instances. One for the server `mysql server` & `mysql client`.
-![instances](instances.png)
+![instances](images/instances.png)
 
 **Step 2 - Install MySQL Server Software**
 ---
@@ -25,7 +25,7 @@
 ---
 
 - The server machine needs to be configured to allow inbound traffic from the client when it is attempting to connect remotely. The port for MySQL server is `TCP 3306`, which has been opened to allow access from the client machine's local IP address.
-![securityrule](securityrule.png)
+![securityrule](images/securityrule.png)
 
 **Step 5 - Set Up Remote User On Server For Client To Connect With**
 ---
@@ -39,7 +39,7 @@
     - Run the following to grant the necessary permissions to the created user `GRANT ALL ON *.* TO '<user>'@'<localhost>';`. The * is a wildcard that selects all the available databases on the server. You can indicate what database needs to be accesible to the user.
 
     - Run `FLUSH PRIVILEGES;` to save permission configuration.
-    ![createuser](create%20user.png)
+    ![createuser](images/create%20user.png)
 
 - We need to declare/bind what IP address would be allowed to connect to the server.
 
@@ -52,9 +52,9 @@
 ---
 
 - On the client server, run `sudo mysql -u <user> -h <localIPaddress> -p`. After this, you will be prompted to put in the password that was setup earlier.
-![client2server](client2server.png)
+![client2server](images/client2server.png)
 
 - Run the `show databases;` command to confirm the created user had necessary access and privileges. See output below:
-![showdatabases](showdatabases.png)
+![showdatabases](images/showdatabases.png)
 
 **Project Successfully Completed!**
