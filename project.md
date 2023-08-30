@@ -44,7 +44,7 @@
 - We need to declare/bind what IP address would be allowed to connect to the server.
 
     - Run `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf` to edit the configuration file. When the config file is opened up, look for the `bind-address` line and add the address that would be bound to the server. For this demo, 127.0.0.1 was changed to 0.0.0.0 to allow access from any location but should NOT be used in prod.
-    ![bind](bind.png)
+    ![bind](images/bind.png)
 
     - Next, run `sudo systemctl restart mysql` to restart MySQL to activate config.
 
